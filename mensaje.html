@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Un Mensaje Especial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .message {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .gif {
+            width: 80%;
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .collage {
+            display: flex;
+            gap: 5px;
+            margin-top: 15px;
+        }
+
+        .collage img {
+            width: 30%;
+            max-width: 100px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .collage img:hover {
+            transform: scale(1.1);
+            box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">Eres alguien muy especial para mí 💖</div>
+    <img src="img/heart-493_256.gif" alt="GIF especial" class="gif">
+    <div class="collage">
+        <img src="img/img1.jpg" alt="Foto 1" onclick="openModal(this.src)">
+        <img src="img/img2.jpg" alt="Foto 2" onclick="openModal(this.src)">
+        <img src="img/img3.jpg" alt="Foto 3" onclick="openModal(this.src)">
+    </div>
+
+    <h3>Bueno, tal vez no sea mucho, o la gran cosa 
+        <br> Pero al menos quiero que veas lo bonita que estas en esas fotos🥺❤️ <br>
+        Y que las demas fotos ya no estan porque se perdieron con mi otro cel :(
+    </h3>
+
+    <div class="modal" id="modal" onclick="closeModal()">
+        <img id="modalImg" src="">
+    </div>
+
+    <script>
+        function openModal(src) {
+            document.getElementById('modalImg').src = src;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

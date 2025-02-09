@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Alguien Especial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to bottom, pink, rgba(255, 192, 203, 0.933));
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        .container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .gif {
+            width: 200px;
+            height: auto;
+            animation: flotar 5s infinite ease-in-out;
+        }
+
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .message {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            background: #ff6b81;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ff4757;
+        }
+
+        .btn.no {
+            position: relative;
+        }
+
+        .btn.no:hover {
+            position: relative;
+            animation: moveAway 0.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes moveAway {
+            from { transform: translateX(0); }
+            to { transform: translateX(20px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="img/butterflys-10904_256.gif" alt="Mariposas flotando" class="gif">
+        <div class="message">Para mi niña bonita ❤️ <br>
+            Quiere ver lo que sigue 😊
+        </div>
+    </div>
+    <div class="buttons">
+        <button class="btn" onclick="location.href='mensaje.html'">Sí</button>
+        <button class="btn no">No</button>
+    </div>
+</body>
+</html>
